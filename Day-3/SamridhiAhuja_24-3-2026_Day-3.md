@@ -1,14 +1,14 @@
 ## Easy Solution
-Greedy Approach we find cost using the price of selling on current day - min value before;
-we find the profit by taking max value of cost 
-class Solution(object):
-    def maxProfit(self, prices):
-        minval=prices[0]
-        profit=0
-        for price in prices:
-            cost=price-minval
-            profit=max(profit,cost)
-            minval=min(minval,price)
+Greedy Approach we find cost using the price of selling on current day - min value before;\
+we find the profit by taking max value of cost \
+class Solution(object):\
+    def maxProfit(self, prices):\
+        minval=prices[0]\
+        profit=0\
+        for price in prices:\
+            cost=price-minval\
+            profit=max(profit,cost)\
+            minval=min(minval,price)\
         return profit
 
 ![alt text](image.png)
