@@ -8,6 +8,7 @@
         for j in range(len(nums)-k,len(nums)):
             nums[j] = m[j - (len(nums) - k)]
 
-        return nums```
+        return nums
+```
 ![alt text](image.png)
 
