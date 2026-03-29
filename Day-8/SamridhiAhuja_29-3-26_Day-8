@@ -1,0 +1,30 @@
+## Easy Solution
+```class Solution(object):
+    def reverseList(self, head):
+        if not head or not  head.next:
+            return head
+        newHead=self.reverseList(head.next)
+        head.next.next=head
+        head.next=None
+        return newHead```
+![alt text](image.png)
+
+## Intermediate Solution
+``class Solution(object):
+    def removeNthFromEnd(self, head, n):
+        if not head:
+            return head 
+        dummy=ListNode(0)
+        dummy.next=head
+        slow=dummy
+        fast=dummy
+        for i in range(n+1):
+            if fast:
+                fast=fast.next
+        while fast:
+            slow=slow.next
+            fast=fast.next 
+        slow.next=slow.next.next
+        return dummy.next```
+
+![alt text](image-1.png)
