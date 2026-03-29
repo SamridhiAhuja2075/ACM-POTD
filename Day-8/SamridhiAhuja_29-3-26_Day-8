@@ -10,7 +10,7 @@
 ![alt text](image.png)
 
 ## Intermediate Solution
-``class Solution(object):
+```class Solution(object):
     def removeNthFromEnd(self, head, n):
         if not head:
             return head 
