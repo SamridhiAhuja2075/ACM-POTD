@@ -6,11 +6,12 @@
         newHead=self.reverseList(head.next)
         head.next.next=head
         head.next=None
-        return newHead```
+        return newHead
+```
 ![alt text](image.png)
 
 ## Intermediate Solution
-``class Solution(object):
+```class Solution(object):
     def removeNthFromEnd(self, head, n):
         if not head:
             return head 
@@ -25,6 +26,7 @@
             slow=slow.next
             fast=fast.next 
         slow.next=slow.next.next
-        return dummy.next```
+        return dummy.next
+```
 
 ![alt text](image-1.png)
