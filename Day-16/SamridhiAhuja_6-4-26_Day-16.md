@@ -31,6 +31,26 @@
 ```
 ![alt text](image-1.png)
 
+## Intermediate Solution 
+```class Solution(object):
+    def dailyTemperatures(self, temperatures):
+        mapper={}
+        stack=[]
+        
+        n=len(temperatures)
+        ans=[-1]*n
+        for i in range(n-1,-1,-1):
+            while stack and stack[-1]<=temperatures[i]:
+                stack.pop()
+            if not stack:
+                ans[i]=0
+            else:
+                ans[i]=mapper[stack[-1]]-i
+            stack.append(temperatures[i])
+            mapper[temperatures[i]]=i
+        return ans
+```
+![alt text](image.png)
 
 
 
