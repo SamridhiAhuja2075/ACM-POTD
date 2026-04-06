@@ -1,35 +1,23 @@
 ## Easy Solution
-```class MyQueue(object):
-
-    def __init__(self):
-        self.input = []
-        self.output = []
-
-    def push(self, x):
-
-        self.input.append(x)
-
-    def pop(self):
-      
-        if not self.output:
-            while self.input:
-                self.output.append(self.input.pop())
-        
-        return self.output.pop()
-
-    def peek(self):
-        
-        if not self.output:
-            while self.input:
-                self.output.append(self.input.pop())
-        
-        return self.output[-1]
-
-    def empty(self):
-        
-        return not self.input and not self.output
+```class Solution(object):
+    def isValid(self, s):
+        stack=[]
+        for i in s:
+            if i in "([{":
+                stack.append(i)
+            else:
+                if not stack:
+                    return False
+                else:
+                    ch=stack[-1]
+                    stack.pop()
+                    if (ch=="(" and i==")") or (ch=="["and i=="]") or (ch=="{" and i=="}"):
+                        continue
+                    else:
+                        return False
+        return len(stack)==0
 ```
-![alt text](image-1.png)
+![alt text](image.png)
 
 
 
